@@ -1,0 +1,15 @@
+<h1>Park Info</h1>
+
+<div id='info'>
+Name: <%= @park.name %>
+Admission Price: $<%= @park.admission_cost %>.00
+</div>
+
+<div id='list'>
+<h3>Rides:</h3>
+<% @park.alpha_order.each_with_index do |ride, index| %>
+  <div id='ride-<%=ride.id%>'><%="#{index.to_s}. #{ride.name}"%><br><div>
+<%end%>
+</div>
+
+<div id='avg_rating'>Average Thrill Rating of Rides: <%=@park.avg_thrill%> </div>

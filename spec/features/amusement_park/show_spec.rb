@@ -40,7 +40,7 @@ RSpec.describe 'park show' do
 
   it 'shows total average thrill rating for all rides' do
     within '#avg_rating' do
-      expect(page).to have_content(Ride.avg_thrill)
+      expect(page).to have_content(@park.avg_thrill)
     end
   end
 end
