@@ -10,7 +10,9 @@ RSpec.describe 'mechanics index' do
   end
 
   it 'has a header that says "All Mechanics" first' do
-    expect('#header').to appear_before("#list")
+    header = find("#header")
+    list = find("#list")
+    expect(header).to appear_before(list)
     within '#header' do
       expect(page).to have_content("All Mechanics")
     end
@@ -21,6 +23,14 @@ RSpec.describe 'mechanics index' do
       expect(page).to have_content(@mech_1.name)
       expect(page).to have_content(@mech_2.name)
       expect(page).to have_content(@mech_3.name)
+    end
+  end
+
+  it 'lists individual exp of all mechanics' do
+    within "#list" do
+      expect(page).to have_content(@mech_1.exp)
+      expect(page).to have_content(@mech_2.exp)
+      expect(page).to have_content(@mech_3.exp)
     end
   end
 

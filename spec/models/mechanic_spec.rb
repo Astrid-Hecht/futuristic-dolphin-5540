@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Mechanic, type: :model do
-  describe 'relationships' do
+  xdescribe 'relationships' do
     it { should have_many(:rides) }
   end
 
@@ -13,6 +13,7 @@ RSpec.describe Mechanic, type: :model do
     end
 
     it '#avg_exp' do 
-      expect(Mechanic.avg_exp).to eq (((@mech_1.exp + @mech_1.exp + @mech_1.exp) / 3.to_f).round(2))
+      expect(Mechanic.avg_exp).to eq(((@mech_1.exp + @mech_2.exp + @mech_3.exp).to_f / 3).round(2))
     end
+  end
 end

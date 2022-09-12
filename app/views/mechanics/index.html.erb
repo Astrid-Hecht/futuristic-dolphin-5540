@@ -1,0 +1,14 @@
+<div id='header'>All Mechanics</div>
+
+<div id='list'>
+List of Mechanics
+<%@mechs.each do |mech|%>
+Mechanic: <%= mech.name %>
+Years of Experience: <%=mech.exp%>
+<%end%>
+<br>
+</div>
+
+<div id='exp'>
+Aggreated Total Average Experience For All Mechanics: <%= Mechanic.avg_exp %>
+</div>
