@@ -41,4 +41,21 @@ RSpec.describe 'mechanics show' do
     breeze = find("#ride-#{@ride_2.id}")
     expect(breeze).to appear_before(twister)
   end
+
+  describe 'Add a Ride to a Mechanic' do 
+    it 'I see a form to add a ride to their workload' do 
+      expect(page).to have_form('Add a Ride to Mechanic')
+    end
+
+    it 'When I fill in form with a ride id and hit submit, its name now appears on the show page' do
+      ride_4 = @park.rides.create(name: "Teacups", thrill_rating: 1, open: true)
+      expect(page).to_not have_content(ride_4.name)
+
+      fill_in 'Add a Ride to Mechanic', with: ride_4.id
+      click_button 'Add'
+      refresh
+      expect(page).to have_current_path("/mechanics/#{@mech_1.id}")
+      expect(page).to have_content(ride_4.name)
+    end
+  end
 end
