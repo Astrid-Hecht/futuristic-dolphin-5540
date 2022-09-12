@@ -11,3 +11,12 @@ Years of Experience: <%= @mech.exp %>
   <div id='ride-<%=ride.id%>'><%= ride.name%><br><div>
 <%end%>
 </div>
+
+<div id='add_ride_form'>
+<%= form_with url: "/mechanics/#{@mech.id}", method: :patch, local: true do |form|%>
+<%= form.label :add_ride_id, 'Add a Ride to Mechanic:'%>
+<%= form.text_field :add_ride_id, placeholder: 'Enter ride ID...', required: true, class: 'form-control'%>
+<%= form.submit 'Add'%>
+<%end%>
+
+</div>

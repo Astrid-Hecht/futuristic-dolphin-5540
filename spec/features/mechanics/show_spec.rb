@@ -44,7 +44,7 @@ RSpec.describe 'mechanics show' do
 
   describe 'Add a Ride to a Mechanic' do 
     it 'I see a form to add a ride to their workload' do 
-      expect(page).to have_form('Add a Ride to Mechanic')
+      expect(page).to have_field('Add a Ride to Mechanic:')
     end
 
     it 'When I fill in form with a ride id and hit submit, its name now appears on the show page' do
@@ -54,8 +54,9 @@ RSpec.describe 'mechanics show' do
       fill_in 'Add a Ride to Mechanic', with: ride_4.id
       click_button 'Add'
       refresh
+
       expect(page).to have_current_path("/mechanics/#{@mech_1.id}")
-      expect(page).to have_content(ride_4.name)
+      expect(page).to have_content("#{ride_4.name}")
     end
   end
 end
