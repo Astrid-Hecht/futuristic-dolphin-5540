@@ -29,7 +29,7 @@ RSpec.describe Mechanic, type: :model do
       MechanicRide.create(mechanic_id: @mech_1.id, ride_id: @ride_2.id)
       MechanicRide.create(mechanic_id: @mech_1.id, ride_id: @ride_3.id)
 
-      expect(@mech_1.rides.thrill_sort).to eq([@ride_2, @ride_1])
+      expect(@mech_1.thrill_sort).to eq([@ride_2, @ride_1])
     end
   end
 end

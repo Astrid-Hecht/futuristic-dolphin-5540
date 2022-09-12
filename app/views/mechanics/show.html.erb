@@ -1,0 +1,13 @@
+<h1>Mechanic Info</h1>
+
+<div id='info'>
+Name: <%= @mech.name %>
+Years of Experience: <%= @mech.exp %>
+</div>
+
+<div id='list'>
+<h3>Rides Working On:</h3>
+<% @mech.thrill_sort.each do |ride| %>
+  <div id='ride-<%=ride.id%>'><%= ride.name%><br><div>
+<%end%>
+</div>
