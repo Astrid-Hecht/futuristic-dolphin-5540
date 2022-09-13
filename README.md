@@ -68,6 +68,13 @@ I see a header saying “All Mechanics”
 And I see a list of all mechanic’s names and their years of experience
 And I see the average years of experience across all mechanics
 ```
+---
+* header with title
+* list of mechanics
+  * name
+  * experience
+* average exp
+---
 
 ```
 Story 2 - Mechanic Show Page
@@ -78,7 +85,19 @@ I see their name, years of experience, and the names of rides they’re working 
 And I only see rides that are open
 And the rides are listed by thrill rating in descending order (most thrills first)
 ```
-
+---
+* join migration
+  * MechanicRides
+    * $ rails generate migration CreateMechanicRides mechanic:references ride:references
+    * Model
+    * associations
+* mechanic info
+  * name
+  * experience
+  * list of rides
+    * only open
+    * sorted by thrill, desc
+---
 ```
 Story 3 - Add a Ride to a Mechanic
 
@@ -102,7 +121,15 @@ Add a ride to workload:
 Ride Id: _pretend_this_is_a_textfield_
 Submit
 ```
-
+---
+* add ride form
+  * field for ride id
+  * method
+  * route for method
+  * controller changes
+    * update
+* redirection
+---
 
 ```
 Extension - Amusement Park Show page
@@ -123,3 +150,14 @@ Ex: Hershey Park
 
 Note: You may have to make new migrations for this story
 ```
+---
+* amusement park show
+* park info
+  * name
+  * price
+* list of rides
+  * alphabetical
+    * model method
+* average thrill rating
+  * model method
+---

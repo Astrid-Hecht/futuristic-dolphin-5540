@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-AmusementPark.destroy_all
-Ride.destroy_all
+# AmusementPark.destroy_all
+# Ride.destroy_all
 
 @six_flags = AmusementPark.create!(name: 'Six Flags', admission_cost: 75)
 @universal = AmusementPark.create!(name: 'Universal Studios', admission_cost: 80)
@@ -16,3 +16,7 @@ Ride.destroy_all
 @ferris = @six_flags.rides.create!(name: 'Ferris Wheel', thrill_rating: 7, open: false)
 
 @jaws = @universal.rides.create!(name: 'Jaws', thrill_rating: 5, open: true)
+
+@mech_1 = Mechanic.create(name: 'Joey', exp: 10)
+@mech_2 = Mechanic.create(name: 'Kristy', exp: 25)
+@mech_3 = Mechanic.create(name: 'Bobert', exp: 7)
